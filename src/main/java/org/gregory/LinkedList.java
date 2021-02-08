@@ -107,7 +107,19 @@ public class LinkedList {
         return i;
     }
 
+
+    
     public void insertAfter(Node _nodeAfter, Node _nodeToInsert) {
+        if (this.head == null && _nodeAfter == null) {
+            this.head = _nodeToInsert;
+            this.tail = _nodeToInsert;
+            return;
+        }
+        
+        if (this.head == null && _nodeAfter != null) {
+            return;
+        }
+
         if (_nodeAfter == null) {
             _nodeToInsert.next = this.head;
             this.head = _nodeToInsert;
@@ -126,6 +138,10 @@ public class LinkedList {
             node = node.next;
         }
     }
+
+    
+    
+    
 
     @Override
     public boolean equals(Object o) {
