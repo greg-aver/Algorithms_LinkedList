@@ -198,6 +198,7 @@ class Node {
         Node node = (Node) o;
 
         if (value != node.value) return false;
+        if (this.next == null ^ node.next == null) return false;
         return this.next != null ? this.next.value == node.next.value : node.next == null;
     }
 
